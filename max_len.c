@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   max_len.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/01 18:16:53 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/05 21:37:14 by tigpetro         ###   ########.fr       */
+/*   Created: 2024/03/05 17:49:42 by tigpetro          #+#    #+#             */
+/*   Updated: 2024/03/05 17:54:56 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int	main(int ac, char **av)
+size_t	max_len(size_t i, size_t j)
 {
-	int		i;
-	t_stack	*tmp_a;
-	// t_stack *tmp_b;
-
-	if (ac == 1)
-		return (err());
-	i = 1;
-	if (check(av, ac))
-		return (0);
-	tmp_a = (ft_stacknew(ac - 1));
-	// tmp_b = (ft_stacknew(ac));
-	while (i < ac)
-	{
-		tmp_a->data = ft_arr_int(av[i++]);
-		printf("%d\n", tmp_a->data);
-		tmp_a->next = tmp_a;
-	}
-	tmp_a->next = 0;
-	system("leaks a.out");
-	return (0);
+	if (i < j)
+		return (i);
+	return (j);
 }

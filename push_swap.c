@@ -6,45 +6,91 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:57 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/04 21:07:39 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/05 21:40:48 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-t_stack	**push_swap(t_stack **a)
-{
-	return (a);
-}
-
-static int	err()
+int	err()
 {
 	printf("%s\n", "Error");
 	return (1);
 }
 
-int	check(char **av)
+static int	check_cmp(int i, int j)
+{
+	char	*s1;
+	char	*s2;
+	int		k;
+	printf("cmp digit %d\n", i);
+	printf("cmp digit %d\n", j);
+
+	k = 1;
+	s1 = ft_itoa(i);
+	s2 = ft_itoa(j);
+	if (ft_strlen(s1) == ft_strlen(s2))
+		if (!ft_strncmp(s1, s2, max_len(ft_strlen(s1), ft_strlen(s2))))
+			k = 0;
+	free(s1);
+	free(s2);
+	return (k);
+}
+
+static int	check_transform(int i, char *s)
+{
+	char	*tmp;
+	char	*av;
+	int		j;
+	int		k;
+
+	j = 0;
+	k = 1;
+	av = ft_strdup(s);
+	tmp = ft_itoa(i);
+	if (av[j] == '-' || av[j] == '+')
+		j++;
+	while (av[j] == '0')
+	{
+		if (av[j + 1] == '\0')
+			break ;
+		j++;
+	}
+	if (i < 0)
+	{
+		j--;
+		av[j] = '-';
+	}
+	printf("trans digit %s\n", tmp);
+	printf("trans string %s\n", s+j);
+	if (ft_strncmp(&av[j], tmp, ft_strlen(tmp)))
+		k = 0;
+	free(tmp);
+	free(av);
+	return (k);
+}
+
+int	check(char **av, int ac)
 {
 	int	i;
 	int	j;
+	long long	*ptr;
 
+	ptr = (long long *)malloc(sizeof(long long) * (ac - 1));
+	if (!ptr)
+		return (0);
 	i = 1;
 	while (av[i])
 	{
-		if ((ft_strlen(av[i]) > 11) || (ft_arr_int(av[i]) == 2147483649))
-		{
+		ptr[i - 1] = ft_arr_int(av[i]);
+		if (ptr[i - 1] == 2147483649 || !check_transform(ptr[i - 1], av[i]))
 			return (err());
-		}
-		j = 1;
-		while (j < i)
-		{
-			if (!ft_strncmp(av[j], av[i], ft_strlen(av[i])))
-			{
+		j = 0;
+		while (j < i - 1)
+			if (!check_cmp(ptr[i - 1], ptr[j++]))
 				return (err());
-			}
-			j++;
-		}
 		i++;
 	}
+	free(ptr);
 	return (0);
 }
