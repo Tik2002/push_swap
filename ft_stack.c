@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/01 19:21:51 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/06 20:53:35 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ t_stack	*ft_stacknew(int n)
 {
 	t_stack	*new;
 
-	new = (t_stack *)malloc(sizeof(t_stack) * n);
+	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		return (0);
-	new->data = 0;
+	new->data = n;
 	new->next = 0;
 	return (new);
 }

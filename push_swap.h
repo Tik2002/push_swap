@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/05 21:37:10 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/06 21:02:27 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ typedef struct s_stack
 int			main(int ac, char **av);
 
 //stack
-t_stack		**push_swap(t_stack **a);
 void		ft_clear(t_stack **lst, void (*del)(int));
 void		ft_delone(t_stack *lst, void (*del)(int));
 t_stack		*ft_stacknew(int n);
 void		ft_pushfront(t_stack **lst, t_stack *new);
+char		*push_swap(t_stack **a);
 
 // check
 int			check(char **av, int ac);
