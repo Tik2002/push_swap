@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/06 20:53:35 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/07 20:02:32 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,25 @@ t_stack	*ft_stacknew(int n)
 	return (new);
 }
 
-void	ft_pushfront(t_stack **lst, t_stack *new)
+t_stack		*ft_emptystacknew(void)
 {
-	void	*tmp;
+	t_stack	*new;
 
-	tmp = *lst;
-	new->next = tmp;
-	*lst = new;
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		return (0);
+	new->next = 0;
+	return (new);
+}
+
+void	ft_pushfront(t_stack **head)
+{
+	t_stack	*tmp;
+
+	tmp = *head;
+	*head = (*head)->next;
+	tmp->next = (*head)->next;
+	(*head)->next = tmp;
 }
 
 void	ft_delone(t_stack *lst, void (*del)(int))

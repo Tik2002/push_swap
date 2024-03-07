@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/06 21:02:27 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/07 20:02:12 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ int			main(int ac, char **av);
 void		ft_clear(t_stack **lst, void (*del)(int));
 void		ft_delone(t_stack *lst, void (*del)(int));
 t_stack		*ft_stacknew(int n);
-void		ft_pushfront(t_stack **lst, t_stack *new);
-char		*push_swap(t_stack **a);
+t_stack		*ft_emptystacknew(void);
+void		ft_pushfront(t_stack **first);
+
+char		*push_swap(t_stack **a, t_stack **b, int ac);
 
 // check
 int			check(char **av, int ac);
