@@ -3,39 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 20:13:00 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/07 20:02:05 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/10 18:15:22 by senate           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-char	*push_swap(t_stack **a, t_stack **b, int ac)
+char	*push_swap(t_stack **head, t_stack **tail, int ac)
 {
 	int i;
-	int	j;
 
-	j = 0;
-	while (j++ != ac)
-	{
-		i = 0;
-		while (i++ != ac - 1)
-		{
-			if ((*a)->data > (*a)->next->data)
-				ft_pushfront(a);
-			*a = (*a)->next;
-		}
-		*a = (*a)->next;
-	}
 	i = 0;
-	while (i++ < 3)
+	while (i++ < ac - 1)
 	{
-		printf("after swap %d  \n", (*a)->data);
-		// printf("%d\n", (*b)->data);
-		*a = (*a)->next;
-		*b = (*b)->next;
+		printf("before swap %d\n", (*head)->data);
+		*head = (*head)->next;
 	}
+	if ((*head)->data > (*head)->next->data)
+		ft_swap(head, tail);
+	i = 0;
+	while (i++ < ac)
+	{
+		printf("after swap %d\n", (*head)->data);
+		*head = (*head)->next;
+	}
+
 	return (0);
 }

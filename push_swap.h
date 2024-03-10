@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/07 20:02:12 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/10 18:20:27 by senate           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ typedef struct s_stack
 int			main(int ac, char **av);
 
 //stack
-void		ft_clear(t_stack **lst, void (*del)(int));
-void		ft_delone(t_stack *lst, void (*del)(int));
 t_stack		*ft_stacknew(int n);
-t_stack		*ft_emptystacknew(void);
-void		ft_pushfront(t_stack **first);
+void		ft_swap(t_stack **head, t_stack **tail);
+void		ft_rotate(t_stack **head);
+void		ft_rev_rotate(t_stack **head, t_stack **tail);
+void		ft_pushfront(t_stack **lst, t_stack *new);
 
-char		*push_swap(t_stack **a, t_stack **b, int ac);
+char		*push_swap(t_stack **head, t_stack **tail, int ac);
 
 // check
 int			check(char **av, int ac);
