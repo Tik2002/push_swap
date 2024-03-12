@@ -8,8 +8,8 @@ OBJS = $(patsubst $(SRCSPATH)%.c,$(SRCSPATH)%.o,$(SRCS))
 LIBFT = $(LIBFTPATH)*.o
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -c $(foreach H,$(INCPATH),-I$(H))
-
+CFLAGS = -Wall -Wextra -c $(foreach H,$(INCPATH),-I$(H))
+ #-Werror
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(OBJS)

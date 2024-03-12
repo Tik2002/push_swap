@@ -3,32 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 20:13:00 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/10 18:15:22 by senate           ###   ########.fr       */
+/*   Updated: 2024/03/12 19:30:13 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-char	*push_swap(t_stack **head, t_stack **tail, int ac)
+char	*push_swap(t_stack **a, t_stack **b, int ac)
 {
-	int i;
+	int		i;
 
-	i = 0;
-	while (i++ < ac - 1)
-	{
-		printf("before swap %d\n", (*head)->data);
-		*head = (*head)->next;
-	}
-	if ((*head)->data > (*head)->next->data)
-		ft_swap(head, tail);
 	i = 0;
 	while (i++ < ac)
 	{
-		printf("after swap %d\n", (*head)->data);
-		*head = (*head)->next;
+		printf("before swap a = %d\n", (*a)->m_head->data);
+		// printf("before swap b = %d\n", (*b)->m_head->data);
+
+		(*a)->m_head = (*a)->m_head->next;
+	}
+	// if ((*a)->m_head->data > (*a)->m_head->next->data)
+	// 	ft_swap(a);
+	// ft_rotate(a);
+	// ft_rotate(a);
+	ft_push_a(a, b);
+	ft_push_a(a, b);
+	i = 0;
+	while (i++ < ac)
+	{
+		printf("after swap a = %d\n", (*a)->m_head->data);
+		printf("after swap b = %d\n", (*b)->m_head->data);
+		(*a)->m_head = (*a)->m_head->next;
+		(*b)->m_head = (*b)->m_head->next;
 	}
 
 	return (0);
