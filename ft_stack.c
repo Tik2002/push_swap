@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/12 19:27:20 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:24:20 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_rotate(t_stack **stack)
 void	ft_rev_rotate(t_stack **stack)
 {
 	while ((*stack)->m_head != (*stack)->m_tail)
-		ft_rotate(stack);
+		(*stack)->m_head = (*stack)->m_head->next;
 }
 
 void	ft_swap(t_stack **stack)
@@ -56,13 +56,13 @@ void	ft_swap(t_stack **stack)
 		(*stack)->m_head = (*stack)->m_tail;
 }
 
-void	ft_push_a(t_stack **a, t_stack **b)
+void	ft_push(t_stack **from, t_stack **to)
 {
 	t_node	*tmp;
 
-	tmp = (*a)->m_head;
-	(*a)->m_head = (*a)->m_head->next;
-	(*a)->m_tail->next = (*a)->m_head;
-	pushfront(tmp->data, *b);
+	tmp = (*from)->m_head;
+	(*from)->m_head = (*from)->m_head->next;
+	(*from)->m_tail->next = (*from)->m_head;
+	pushfront(tmp->data, *to);
 	free(tmp);
 }

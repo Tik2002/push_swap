@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/12 19:27:19 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:39:43 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <libft.h>
+# include <ft_printf.h>
 
 typedef struct s_node
 {
@@ -27,6 +28,9 @@ typedef struct s_stack
 	t_node	*m_tail;
 }	t_stack;
 
+// jnjel
+void		print_stack(t_stack *stack, int ac);
+
 // main
 int			main(int ac, char **av);
 char		*push_swap(t_stack **head, t_stack **tail, int ac);
@@ -34,7 +38,7 @@ char		*push_swap(t_stack **head, t_stack **tail, int ac);
 // stack
 void		ft_rotate(t_stack **head);
 void		ft_rev_rotate(t_stack **stack);
-void		ft_push_a(t_stack **a, t_stack **b);
+void		ft_push(t_stack **from, t_stack **to);
 void		pushfront(int n, t_stack *stack);
 void		ft_swap(t_stack **stack);
 
@@ -43,6 +47,9 @@ t_stack		*ft_new_stack(void);
 t_node		*ft_new_node(int n);
 void		pushback(int n, t_stack *stack);
 
+// sort
+int			ft_not_sorted(t_node  *const head);
+int			ft_sorted(t_node  *const head);
 
 // check
 int			check(char **av, int ac);

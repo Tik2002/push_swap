@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 20:13:00 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/12 19:30:13 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:36:50 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,18 @@
 
 char	*push_swap(t_stack **a, t_stack **b, int ac)
 {
-	int		i;
-
-	i = 0;
-	while (i++ < ac)
+	while (ft_not_sorted((*a)->m_head))
 	{
-		printf("before swap a = %d\n", (*a)->m_head->data);
-		// printf("before swap b = %d\n", (*b)->m_head->data);
-
-		(*a)->m_head = (*a)->m_head->next;
+		if (ft_sorted((*a)->m_head))
+		{
+			print_stack(*a, ac);
+			// if (1)
+				ft_rotate(a);
+			// else
+			// 	ft_rev_rotate(a);
+		}
 	}
-	// if ((*a)->m_head->data > (*a)->m_head->next->data)
-	// 	ft_swap(a);
-	// ft_rotate(a);
-	// ft_rotate(a);
-	ft_push_a(a, b);
-	ft_push_a(a, b);
-	i = 0;
-	while (i++ < ac)
-	{
-		printf("after swap a = %d\n", (*a)->m_head->data);
-		printf("after swap b = %d\n", (*b)->m_head->data);
-		(*a)->m_head = (*a)->m_head->next;
-		(*b)->m_head = (*b)->m_head->next;
-	}
-
+	print_stack(*a, ac);
+	// ft_push(a, b);
 	return (0);
 }
