@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/14 20:24:20 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/15 20:10:45 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,18 @@ void	pushfront(int n, t_stack *stack)
 
 	new = ft_new_node(n);
 	if (!stack->m_head)
+	{
 		stack->m_head = new;
-	if (!stack->m_tail)
-		stack->m_tail = new;
-	new->next = stack->m_head;
-	stack->m_tail->next = new;
+		stack->m_head->next = new;
+		stack->m_head->prev = new;
+	}
+	else
+	{
+		new->next = stack->m_head;
+		new->prev = stack->m_head->prev;
+		new->prev->next = new;
+		stack->m_head->prev = new;
+	}
 }
 
 void	ft_rotate(t_stack **stack)
@@ -32,28 +39,18 @@ void	ft_rotate(t_stack **stack)
 
 void	ft_rev_rotate(t_stack **stack)
 {
-	while ((*stack)->m_head != (*stack)->m_tail)
-		(*stack)->m_head = (*stack)->m_head->next;
+	(*stack)->m_head = (*stack)->m_head->prev;
 }
 
 void	ft_swap(t_stack **stack)
 {
-	t_node	*tmp;
-	t_node	*tmp_next;
+	int	tmp;
 
-	if (!(*stack)->m_head || !(*stack)->m_head->next)
+	if ((!(*stack)->m_head || !(*stack)->m_head->next) && (*stack)->m_head == (*stack)->m_head->next)
 		return ;
-	tmp = (*stack)->m_head;
-	tmp_next = (*stack)->m_head->next;
-	if ((*stack)->m_head->next != (*stack)->m_tail)
-	{
-		(*stack)->m_head = tmp_next;
-		tmp->next = tmp_next->next;
-		(*stack)->m_head->next = tmp;
-		(*stack)->m_tail->next = (*stack)->m_head;
-	}
-	else
-		(*stack)->m_head = (*stack)->m_tail;
+	tmp = (*stack)->m_head->data;
+	(*stack)->m_head->data = (*stack)->m_head->next->data;
+	(*stack)->m_head->next->data = tmp;
 }
 
 void	ft_push(t_stack **from, t_stack **to)
@@ -62,7 +59,8 @@ void	ft_push(t_stack **from, t_stack **to)
 
 	tmp = (*from)->m_head;
 	(*from)->m_head = (*from)->m_head->next;
-	(*from)->m_tail->next = (*from)->m_head;
+	(*from)->m_head->prev = tmp->prev;
+	tmp->prev->next = (*from)->m_head;
 	pushfront(tmp->data, *to);
 	free(tmp);
 }

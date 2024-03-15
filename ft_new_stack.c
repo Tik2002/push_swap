@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:24:25 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/12 19:25:38 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/15 19:52:32 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*ft_new_node(int n)
 		return (0);
 	new->data = n;
 	new->next = 0;
+	new->prev = 0;
 	return (new);
 }
 
@@ -30,7 +31,6 @@ t_stack	*ft_new_stack(void)
 
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	stack->m_head = 0;
-	stack->m_tail = 0;
 	return (stack);
 }
 
@@ -40,10 +40,16 @@ void	pushback(int n, t_stack *stack)
 
 	new = ft_new_node(n);
 	if (!stack->m_head)
+	{
 		stack->m_head = new;
-	if (!stack->m_tail)
-		stack->m_tail = new;
-	stack->m_tail->next = new;
-	stack->m_tail = new;
-	new->next = stack->m_head;
+		stack->m_head->next = new;
+		stack->m_head->prev = new;
+	}
+	else
+	{
+		new->prev = stack->m_head->prev;
+		new->next = stack->m_head;
+		stack->m_head->prev = new;
+		new->prev->next = new;
+	}
 }

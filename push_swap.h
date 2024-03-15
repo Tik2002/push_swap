@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/14 20:39:43 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/15 19:13:12 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ typedef struct s_node
 {
 	int				data;
 	struct s_node	*next;
+	struct s_node	*prev;
 }	t_node;
 
 typedef struct s_stack
 {
 	t_node	*m_head;
-	t_node	*m_tail;
+	char	name;
 }	t_stack;
 
 // jnjel

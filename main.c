@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:16:53 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/14 19:51:36 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/15 20:00:30 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,12 @@ static void	esh(int ac, char **av, t_stack **a, t_stack **b)
 		return ;
 	i = 1;
 	*a = ft_new_stack();
+	(*a)->name = 'a';
 	*b = ft_new_stack();
+	(*b)->name = 'b';
 	while (i < ac)
 		pushback(ft_arr_int(av[i++]), *a);
+	print_stack(*a, ac - 1);
 	push_swap(a, b, ac - 1);
 }
 
@@ -63,10 +66,11 @@ void	print_stack(t_stack *stack, int ac)
 	int i = 1;
 	while (ac >= i)
 	{
-		ft_printf("%d) a = %d\n", i, stack->m_head->data);
+		ft_printf("%d) %c = %d\n", i, stack->name, stack->m_head->data);
 		stack->m_head = stack->m_head->next;
 		i++;
 	}
+	ft_printf("\n");
 }
 
 int	main(int ac, char **av)
