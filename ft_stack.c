@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/15 20:10:45 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/18 20:25:52 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	pushfront(int n, t_stack *stack)
 		new->prev = stack->m_head->prev;
 		new->prev->next = new;
 		stack->m_head->prev = new;
+		stack->m_head = new;
 	}
 }
 
@@ -58,9 +59,19 @@ void	ft_push(t_stack **from, t_stack **to)
 	t_node	*tmp;
 
 	tmp = (*from)->m_head;
-	(*from)->m_head = (*from)->m_head->next;
-	(*from)->m_head->prev = tmp->prev;
-	tmp->prev->next = (*from)->m_head;
-	pushfront(tmp->data, *to);
-	free(tmp);
+	if ((*from)->m_head->next == (*from)->m_head)
+	{
+		(*from)->m_head->next = 0;
+		(*from)->m_head->prev = 0;
+		pushfront(tmp->data, *to);
+		free(tmp);
+	}
+	else
+	{
+		(*from)->m_head = (*from)->m_head->next;
+		(*from)->m_head->prev = tmp->prev;
+		tmp->prev->next = (*from)->m_head;
+		pushfront(tmp->data, *to);
+		free(tmp);
+	}
 }

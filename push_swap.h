@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/15 19:13:12 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/18 19:32:39 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		print_stack(t_stack *stack, int ac);
 
 // main
 int			main(int ac, char **av);
-char		*push_swap(t_stack **head, t_stack **tail, int ac);
+void		push_swap(t_stack **head, t_stack **tail, int ac);
 
 // stack
 void		ft_rotate(t_stack **head);
@@ -50,7 +50,6 @@ void		pushback(int n, t_stack *stack);
 
 // sort
 int			ft_not_sorted(t_node  *const head);
-int			ft_sorted(t_node  *const head);
 
 // check
 int			check(char **av, int ac);
