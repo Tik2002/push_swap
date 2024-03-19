@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/19 15:36:31 by senate           ###   ########.fr       */
+/*   Updated: 2024/03/19 19:47:48 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,25 @@ void	pushfront(int n, t_stack *stack)
 	}
 }
 
-void	ft_rotate(t_stack *stack)
+void	rr(t_stack *a, t_stack *b)
 {
-	stack->m_head = stack->m_head->next;
+	ra(a, 0);
+	rb(b, 0);
+	ft_printf("rr\n");
 }
 
-void	ft_rev_rotate(t_stack *stack)
+void	rrr(t_stack *a, t_stack *b)
 {
-	stack->m_head = stack->m_head->prev;
+	rra(a, 0);
+	rrb(b, 0);
+	ft_printf("rrr\n");
 }
 
-void	ft_swap(t_stack *stack)
+void	ss(t_stack *a, t_stack *b)
 {
-	int	tmp;
-
-	if (!stack->m_head || stack->m_head == stack->m_head->next)
-		return ;
-	tmp = stack->m_head->data;
-	stack->m_head->data = stack->m_head->next->data;
-	stack->m_head->next->data = tmp;
+	sa(a, 0);
+	sb(b, 0);
+	ft_printf("ss\n");
 }
 
 void	ft_push(t_stack *from, t_stack *to)
@@ -74,4 +74,5 @@ void	ft_push(t_stack *from, t_stack *to)
 		pushfront(tmp->data, to);
 		free(tmp);
 	}
+	ft_printf("p%c\n", from->name);
 }

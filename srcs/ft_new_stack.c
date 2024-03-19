@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:24:25 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/18 20:23:06 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/19 20:02:51 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,36 @@ void	pushback(int n, t_stack *stack)
 		stack->m_head->prev = new;
 		new->prev->next = new;
 	}
+}
+
+int	min_data(t_node *const head)
+{
+	int		value;
+	t_node	*tmp;
+
+	tmp = head->next;
+	value = head->data;
+	while (tmp != head)
+	{
+		if (tmp->data < value)
+			value = tmp->data;
+		tmp = tmp->next;
+	}
+	return (value);
+}
+
+int	max_data(t_node *const head)
+{
+	int		value;
+	t_node	*tmp;
+
+	tmp = head->next;
+	value = head->data;
+	while (tmp != head)
+	{
+		if (tmp->data > value)
+			value = tmp->data;
+		tmp = tmp->next;
+	}
+	return (value);
 }

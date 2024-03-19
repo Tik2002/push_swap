@@ -1,8 +1,8 @@
 NAME = push_swap
-SRCSPATH = ./
+SRCSPATH = ./srcs/
 PRINTF_PATH = ./printf/
-LIBFTPATH = ./printf/libft/
-INCPATH = ./ ./printf/includes/ ./printf/libft/
+LIBFTPATH = ./libft/
+INCPATH = ./includes/ ./printf/includes/ ./printf/libft/
 SRCS = $(wildcard $(SRCSPATH)*.c)
 OBJS = $(patsubst $(SRCSPATH)%.c,$(SRCSPATH)%.o,$(SRCS))
 PRINTF = $(PRINTF_PATH)/srcs/*.o
@@ -14,7 +14,7 @@ CFLAGS = -Wall -Wextra -c $(foreach H,$(INCPATH),-I$(H))
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(PRINTF) $(OBJS)
-	ar -rcs $(NAME) $(LIBFT) $(PRINTF) $(OBJS)
+	$(CC) $(LIBFT) $(PRINTF) $(OBJS) -o $(NAME)
 
 $(LIBFT) :
 	make -C $(LIBFTPATH) all
