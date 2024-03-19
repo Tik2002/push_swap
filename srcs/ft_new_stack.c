@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_new_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:24:25 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/19 20:02:51 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/19 22:35:33 by senate           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_stack	*ft_new_stack(void)
 	return (stack);
 }
 
-void	pushback(int n, t_stack *stack)
+void	ft_pushback(int n, t_stack *stack)
 {
 	t_node	*new;
 

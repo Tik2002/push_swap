@@ -9,8 +9,8 @@ PRINTF = $(PRINTF_PATH)/srcs/*.o
 LIBFT = $(LIBFTPATH)*.o
 
 CC = cc
-CFLAGS = -Wall -Wextra -c $(foreach H,$(INCPATH),-I$(H))
-#-Werror
+CFLAGS = -Wall -Wextra -Werror -c $(foreach H,$(INCPATH),-I$(H))
+#
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(PRINTF) $(OBJS)
