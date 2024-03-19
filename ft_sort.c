@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:35:03 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/18 19:23:56 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/19 15:43:56 by senate           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_not_sorted(t_node  *const head)
 	r = head->next;
 	while(r != head)
 	{
-		// ft_printf("head = %d\n", head->data);
 		if (l->data > r->data)
 			return (1);
 		l = l->next;

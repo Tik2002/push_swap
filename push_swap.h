@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/18 19:32:39 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/19 15:12:31 by senate           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ typedef struct s_stack
 }	t_stack;
 
 // jnjel
-void		print_stack(t_stack *stack, int ac);
+void		print_stack(t_stack stack, int ac);
 
 // main
 int			main(int ac, char **av);
-void		push_swap(t_stack **head, t_stack **tail, int ac);
+void		push_swap(t_stack *a, t_stack *b, int ac);
 
 // stack
-void		ft_rotate(t_stack **head);
-void		ft_rev_rotate(t_stack **stack);
-void		ft_push(t_stack **from, t_stack **to);
+void		ft_rotate(t_stack *stack);
+void		ft_rev_rotate(t_stack *stack);
+void		ft_push(t_stack *from, t_stack *to);
 void		pushfront(int n, t_stack *stack);
-void		ft_swap(t_stack **stack);
+void		ft_swap(t_stack *stack);
 
 // new_stack
 t_stack		*ft_new_stack(void);
