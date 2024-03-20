@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/19 22:41:34 by senate           ###   ########.fr       */
+/*   Updated: 2024/03/20 20:27:05 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,9 @@ void	ft_push(t_stack *from, t_stack *to)
 	tmp = from->m_head;
 	if (from->m_head->next == from->m_head)
 	{
-		from->m_head->next = 0;
-		from->m_head->prev = 0;
 		ft_pushfront(tmp->data, to);
-		free(tmp);
+		free(from->m_head);
+		from->m_head = 0;
 	}
 	else
 	{
@@ -76,5 +75,5 @@ void	ft_push(t_stack *from, t_stack *to)
 		ft_pushfront(tmp->data, to);
 		free(tmp);
 	}
-	ft_printf("p%c\n", from->name);
+	ft_printf("p%c\n", to->name);
 }

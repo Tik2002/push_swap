@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 22:46:14 by senate            #+#    #+#             */
-/*   Updated: 2024/03/20 01:35:52 by senate           ###   ########.fr       */
+/*   Updated: 2024/03/20 20:25:09 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	check_swap(t_stack *a, t_stack *b)
 {
-	ft_printf("check swap \n");
+	// ft_printf("check swap \n");
 	if (!(b->m_head) || b->m_head == b->m_head->next)
 	{
 		if (a->m_head->data > a->m_head->next->data)
@@ -24,7 +24,7 @@ int	check_swap(t_stack *a, t_stack *b)
 	}
 	else
 	{
-		ft_printf(" result %d\n", a->m_head->data > a->m_head->next->data || b->m_head->data < b->m_head->next->data);
+		// ft_printf(" result %d\n", a->m_head->data > a->m_head->next->data || b->m_head->data < b->m_head->next->data);
 		if (a->m_head->data > a->m_head->next->data
 		|| b->m_head->data < b->m_head->next->data)
 			return (1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:35:03 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/20 01:38:21 by senate           ###   ########.fr       */
+/*   Updated: 2024/03/20 20:00:14 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,14 +102,26 @@ int	ft_offset_sort(t_node *const head, int bool)
 {
 	t_node	*next_head;
 	t_node	*prev_head;
+	int		min;
+	int		max;
 
 	if (!head || head->prev == head->next)
 		return (0);
 	next_head = head->next;
 	prev_head = head->prev;
 	if (bool)
-		return (ft_sort_util(prev_head, next_head, min_data(head)));
+	{
+		min = min_data(head);
+		if (head->data == min)
+			return (0);
+		return (ft_sort_util(prev_head, next_head, min));
+	}
 	else
-		return (ft_rev_sort_util(prev_head, next_head, max_data(head)));
+	{
+		max = max_data(head);
+		if (head->data == max)
+			return (0);
+		return (ft_rev_sort_util(prev_head, next_head, max));
+	}
 	return (0);
 }

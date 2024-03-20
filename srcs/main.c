@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: senate <senate@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:16:53 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/19 22:35:16 by senate           ###   ########.fr       */
+/*   Updated: 2024/03/20 21:29:58 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,27 @@ static void	esh(int ac, char **av, t_stack *a, t_stack *b)
 	b->name = 'b';
 	while (i < ac)
 		ft_pushback(ft_arr_int(av[i++]), a);
-	print_stack(*a, ac - 1);
+	// print_stack(*a, *b);
 	ft_push_swap(a, b);
 }
 
-void	print_stack(t_stack stack, int ac)
-{
-	int i = 1;
-	while (ac >= i)
-	{
-		ft_printf("%d) %c = %d\n", i, stack.name, stack.m_head->data);
-		stack.m_head = stack.m_head->next;
-		i++;
-	}
-	ft_printf("\n");
-}
+// void	print_stack(t_stack a, t_stack b)
+// {
+// 	t_node *tmp_a;
+
+// 	tmp_a = a.m_head;
+// 	ft_printf("%d		", tmp_a->data);
+
+// 	ft_printf("\n");
+// 	tmp_a = tmp_a->next;
+// 	while (tmp_a != a.m_head)
+// 	{
+// 		ft_printf("%d	", tmp_a->data);
+// 		tmp_a = tmp_a->next;
+// 		ft_printf("\n");
+// 	}
+// 	ft_printf("_		_\n%c		%c\n", a.name, b.name);
+// }
 
 int	main(int ac, char **av)
 {
