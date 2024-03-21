@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:16:53 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/20 21:29:58 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:03:05 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,23 +61,23 @@ static void	esh(int ac, char **av, t_stack *a, t_stack *b)
 	ft_push_swap(a, b);
 }
 
-// void	print_stack(t_stack a, t_stack b)
-// {
-// 	t_node *tmp_a;
+void	print_stack(t_stack a, t_stack b)
+{
+	t_node *tmp_a;
 
-// 	tmp_a = a.m_head;
-// 	ft_printf("%d		", tmp_a->data);
+	tmp_a = a.m_head;
+	ft_printf("%d		", tmp_a->data);
 
-// 	ft_printf("\n");
-// 	tmp_a = tmp_a->next;
-// 	while (tmp_a != a.m_head)
-// 	{
-// 		ft_printf("%d	", tmp_a->data);
-// 		tmp_a = tmp_a->next;
-// 		ft_printf("\n");
-// 	}
-// 	ft_printf("_		_\n%c		%c\n", a.name, b.name);
-// }
+	ft_printf("\n");
+	tmp_a = tmp_a->next;
+	while (tmp_a != a.m_head)
+	{
+		ft_printf("%d	", tmp_a->data);
+		tmp_a = tmp_a->next;
+		ft_printf("\n");
+	}
+	ft_printf("_		_\n%c		%c\n", a.name, b.name);
+}
 
 int	main(int ac, char **av)
 {

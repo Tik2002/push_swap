@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 20:13:00 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/20 21:30:16 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:28:01 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	check_sort(t_stack *a, t_stack *b)
 {
-	if (!(b->m_head))
+	if (!(b->m_head) && a->m_head != 0)
 		if (ft_is_sorted(a->m_head))
 			return (0);
 	return (1);
@@ -31,11 +31,12 @@ void	ft_push_swap(t_stack *a, t_stack *b)
 			do_rev_rotate(a, b);
 		else if (check_swap(a, b))
 			do_swap(a, b);
-		else
+		else if (check_push(a, b))
 			do_push(a, b);
+		print_stack(*a, *b);
 		// i++;
 	}
 	// ft_printf("check %d\n", !(b->m_head));
-	// print_stack(*a, *b);
+	print_stack(*a, *b);
 	// ft_printf("%d\n", i);
 }

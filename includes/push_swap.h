@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/20 21:30:06 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:29:33 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 }	t_stack;
 
 // jnjel
-// void		print_stack(t_stack a, t_stack b);
+void		print_stack(t_stack a, t_stack b);
 
 // main
 int			main(int ac, char **av);
@@ -59,6 +59,8 @@ int			max_data(t_node *const head);
 int			check_rev_rotate(t_stack *a, t_stack *b);
 int			check_rotate(t_stack *a, t_stack *b);
 int			check_swap(t_stack *a, t_stack *b);
+int			check_push_for_b(t_stack *a, t_stack *b);
+int			check_push_for_a(t_stack *a, t_stack *b);
 int			check_push(t_stack *a, t_stack *b);
 void		do_rotate(t_stack *a, t_stack *b);
 void		do_rev_rotate(t_stack *a, t_stack *b);
