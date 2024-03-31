@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:57 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/06 20:22:15 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:22:26 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	err(void)
 {
-	printf("%s\n", "Error");
+	ft_putstr_fd("Error\n", 2);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/20 20:27:05 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:55:09 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,6 @@ void	ft_pushfront(int n, t_stack *stack)
 		stack->m_head->prev = new;
 		stack->m_head = new;
 	}
-}
-
-void	ft_all_rotate(t_stack *a, t_stack *b)
-{
-	ft_rotate(a, 0);
-	ft_rotate(b, 0);
-	ft_printf("rr\n");
-}
-
-void	ft_all_reverse_rotate(t_stack *a, t_stack *b)
-{
-	ft_reverse_rotate(a, 0);
-	ft_reverse_rotate(b, 0);
-	ft_printf("rrr\n");
-}
-
-void	ft_all_swap(t_stack *a, t_stack *b)
-{
-	ft_swap(a, 0);
-	ft_swap(b, 0);
-	ft_printf("ss\n");
 }
 
 void	ft_push(t_stack *from, t_stack *to)
