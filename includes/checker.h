@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sorting.c                                    :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 19:33:46 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/04/01 19:59:06 by tigpetro         ###   ########.fr       */
+/*   Created: 2024/04/01 19:02:40 by tigpetro          #+#    #+#             */
+/*   Updated: 2024/04/01 19:07:17 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#ifndef CHECKER_H
+# define CHECKER_H
+# define BUFFER_SIZE 4
 
-void	ft_rotate(t_stack *stack)
-{
-	stack->m_head = stack->m_head->next;
-}
+# include <push_swap.h>
 
-void	ft_reverse_rotate(t_stack *stack)
-{
-	stack->m_head = stack->m_head->prev;
-}
+// GNEL_DZYA
+char	*gnl_strchr(char *s, int c);
+void	gnl_strjoin(char **line, char *buff);
+void	gnl_new_line(char **line, char *next_lines);
+char	*gnl_strdup(char **line);
+void	gnl_read(int fd, char **line);
+char	*get_next_line(int fd);
 
-void	ft_swap(t_stack *stack)
-{
-	int	tmp;
-
-	tmp = stack->m_head->data;
-	stack->m_head->data = stack->m_head->next->data;
-	stack->m_head->next->data = tmp;
-}
+#endif //CHECKER_H

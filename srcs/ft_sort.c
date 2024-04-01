@@ -6,13 +6,13 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:35:03 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/22 21:32:16 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/01 19:39:13 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int	ft_is_sorted(t_node *const head)
+int	ft_is_sorted(t_node *const head, char c)
 {
 	t_node	*l;
 	t_node	*r;
@@ -21,7 +21,7 @@ int	ft_is_sorted(t_node *const head)
 	r = head->next;
 	while (r != head)
 	{
-		if (l->data > r->data)
+		if ((l->data > r->data && c == 'a') || (l->data < r->data && c == 'b'))
 			return (0);
 		l = l->next;
 		r = r->next;
@@ -29,7 +29,7 @@ int	ft_is_sorted(t_node *const head)
 	return (1);
 }
 
-static int	ft_sort_util(t_node *prev_head, t_node *next_head, int min)
+static int	ft_sort_util(t_node *prev_head, t_node *next_head, int min, char c)
 {
 	int		i;
 	int		j;
@@ -47,10 +47,10 @@ static int	ft_sort_util(t_node *prev_head, t_node *next_head, int min)
 		j++;
 	}
 	if (i > j)
-		if (ft_is_sorted(prev_head))
+		if (ft_is_sorted(prev_head, c))
 			return (-1);
 	if (i <= j)
-		if (ft_is_sorted(next_head))
+		if (ft_is_sorted(next_head, c))
 			return (1);
 	return (0);
 }
@@ -77,7 +77,7 @@ static int	ft_find_min(t_node *prev_head, t_node *next_head, int min)
 	return (0);
 }
 
-int	ft_offset_sort(t_node *const head)
+int	ft_offset_sort(t_node *const head, char c)
 {
 	t_node	*next_head;
 	t_node	*prev_head;
@@ -90,7 +90,7 @@ int	ft_offset_sort(t_node *const head)
 	min = min_data(head);
 	if (head->data == min)
 		return (0);
-	return (ft_sort_util(prev_head, next_head, min));
+	return (ft_sort_util(prev_head, next_head, min, c));
 }
 
 void	rotate_to_min(t_stack *a, int min, t_stack *b)
