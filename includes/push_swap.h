@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/04/01 19:39:22 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:13:19 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,10 @@ t_stack		*ft_new_stack(void);
 t_node		*ft_new_node(int n);
 void		ft_pushback(int n, t_stack *stack);
 int			min_data(t_node *const head);
-int			max_data(t_node *const head);
 
 // sort
-int			ft_is_sorted(t_node *const head, char c);
-int			ft_offset_sort(t_node *const head, char c);
+int			ft_is_sorted(t_node *const head);
+int			ft_offset_sort(t_node *const head);
 void		rotate_to_min(t_stack *a, int min, t_stack *b);
 
 // check

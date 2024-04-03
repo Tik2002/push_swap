@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:24:25 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/22 19:15:10 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:11:44 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,22 +64,6 @@ int	min_data(t_node *const head)
 	while (tmp != head)
 	{
 		if (tmp->data < value)
-			value = tmp->data;
-		tmp = tmp->next;
-	}
-	return (value);
-}
-
-int	max_data(t_node *const head)
-{
-	int		value;
-	t_node	*tmp;
-
-	tmp = head->next;
-	value = head->data;
-	while (tmp != head)
-	{
-		if (tmp->data > value)
 			value = tmp->data;
 		tmp = tmp->next;
 	}
