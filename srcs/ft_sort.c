@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:35:03 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/04/03 19:11:29 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/20 22:13:14 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,9 @@ void	rotate_to_min(t_stack *a, int min, t_stack *b)
 	flag = ft_find_min(prev_head, next_head, min);
 	if (flag == 0)
 		while (a->m_head->data != min)
-			ft_rotate(a);
+			ft_rotate(a, 1);
 	else
 		while (a->m_head->data != min)
-			ft_reverse_rotate(a);
-	ft_push(a, b);
+			ft_reverse_rotate(a, 1);
+	ft_push(a, b, 1);
 }

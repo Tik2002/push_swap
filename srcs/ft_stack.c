@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:08:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/21 18:55:09 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/20 22:13:31 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_pushfront(int n, t_stack *stack)
 	}
 }
 
-void	ft_push(t_stack *from, t_stack *to)
+void	ft_push(t_stack *from, t_stack *to, int flag)
 {
 	t_node	*tmp;
 
@@ -54,5 +54,6 @@ void	ft_push(t_stack *from, t_stack *to)
 		ft_pushfront(tmp->data, to);
 		free(tmp);
 	}
-	ft_printf("p%c\n", to->name);
+	if (flag)
+		ft_printf("p%c\n", to->name);
 }

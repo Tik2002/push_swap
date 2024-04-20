@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:57 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/22 17:22:26 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:49:28 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	err(void)
 {
 	ft_putstr_fd("Error\n", 2);
-	return (1);
+	exit(1);
 }
 
 static int	check_cmp(int i, int j)

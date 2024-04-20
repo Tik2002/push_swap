@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:16:53 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/03/22 19:18:25 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:45:22 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	**make_split(char **av)
 		return (0);
 	new_av[0] = ft_strdup(av[0]);
 	while (tmp[i++])
-		new_av[i] = strdup(tmp[i - 1]);
+		new_av[i] = ft_strdup(tmp[i - 1]);
 	new_av[i] = 0;
 	i = 0;
 	while (tmp[i])
@@ -44,7 +44,7 @@ static char	**make_split(char **av)
 	return (new_av);
 }
 
-static void	esh(int ac, char **av, t_stack *a, t_stack *b)
+static void	main_util(int ac, char **av, t_stack *a, t_stack *b)
 {
 	int		i;
 
@@ -91,6 +91,6 @@ int	main(int ac, char **av)
 	}
 	if (ac == 1)
 		return (1);
-	esh(ac, av, &a, &b);
+	main_util(ac, av, &a, &b);
 	return (0);
 }

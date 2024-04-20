@@ -1,6 +1,8 @@
 {
 	"files.associations": {
 		"push_swap.h": "c",
-		"ft_printf.h": "c"
+		"ft_printf.h": "c",
+		"checker.h": "c",
+		"fcntl.h": "c"
 	}
 }

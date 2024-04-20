@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:59:50 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/04/03 19:13:19 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/20 22:11:59 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ typedef struct s_stack
 void		ft_push_swap(t_stack *a, t_stack *b);
 
 // stack_sorting
-void		ft_rotate(t_stack *stack);
-void		ft_reverse_rotate(t_stack *stack);
-void		ft_swap(t_stack *stack);
-void		ft_push(t_stack *from, t_stack *to);
+void		ft_rotate(t_stack *stack, int flag);
+void		ft_reverse_rotate(t_stack *stack, int flag);
+void		ft_swap(t_stack *stack, int flag);
+void		ft_push(t_stack *from, t_stack *to, int flag);
 void		ft_pushfront(int n, t_stack *stack);
 
 // new_stack
