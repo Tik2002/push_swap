@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 18:32:39 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/04/20 23:05:21 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:34:26 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ static void	main_util(int ac, char **av, t_stack *a, t_stack *b)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
+	ft_destroy(a);
+	ft_destroy(b);
 }
 
 int	main(int ac, char **av)

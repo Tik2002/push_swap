@@ -6,7 +6,7 @@
 /*   By: tigpetro <tigpetro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:16:53 by tigpetro          #+#    #+#             */
-/*   Updated: 2024/04/14 17:45:22 by tigpetro         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:34:46 by tigpetro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ static void	main_util(int ac, char **av, t_stack *a, t_stack *b)
 	while (i < ac)
 		ft_pushback(ft_arr_int(av[i++]), a);
 	ft_push_swap(a, b);
+	ft_destroy(a);
+	ft_destroy(b);
 }
 
 // void	print_stack(t_stack a, t_stack b)
